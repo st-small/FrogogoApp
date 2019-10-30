@@ -15,4 +15,6 @@ public struct User: Decodable {
     public var email: String
     public var avatarUrl: String?
     public var url: String
+    
+    public var name: String { return firstName + " " + lastName }
 }

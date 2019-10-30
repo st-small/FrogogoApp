@@ -12,6 +12,11 @@ public struct Constants {
     
     public struct Colors {
         static let backgroundColor = UIColor(hexString: "#FFFFFF")
+        
+        public struct MainGradient {
+            static let start = UIColor(hexString: "#34AFFF")
+            static let end = UIColor(hexString: "#8321E1")
+        }
     }
     
     public struct NetworkURLs {

@@ -11,6 +11,7 @@ import Foundation
 public protocol UsersListModelProtocol: class {
     var isUIBlocked: Dynamic<Bool> { get }
     var error: Dynamic<String> { get }
+    var users: Dynamic<[User]> { get }
     
     func getUsers()
 }
@@ -20,6 +21,7 @@ public class UsersListModel: UsersListModelProtocol {
     // Data
     public let isUIBlocked: Dynamic<Bool>
     public let error: Dynamic<String>
+    public let users: Dynamic<[User]>
 
     // Services
     private var networker: NetworkService
@@ -28,14 +30,18 @@ public class UsersListModel: UsersListModelProtocol {
     public init() {
         isUIBlocked = Dynamic(false)
         error = Dynamic("")
+        users = Dynamic([])
         
         networker = NetworkService()
         fetcher = NetworkDataFetcher(networker)
     }
     
     public func getUsers() {
-        fetcher.getUsers { (response) in
-            
+        isUIBlocked.value = true
+        fetcher.getUsers { [weak self] (response) in
+            self?.isUIBlocked.value = false
+            guard let users = response else { return }
+            self?.users.value = users
         }
     }
 }

@@ -12,15 +12,30 @@ public class FROViewController: UIViewController {
     
     // UI elements
     private var blurView = UIView(frame: UIScreen.main.bounds)
+    private var gradient: GradientView = {
+        let start = Constants.Colors.MainGradient.start
+        let end = Constants.Colors.MainGradient.end
+        let view = GradientView(startColor: start, endColor: end)
+        return view
+    }()
     
     public override func loadView() {
         super.loadView()
+        
+        prepareBackground()
     }
     
     public override func viewDidLoad() {
         super.viewDidLoad()
-        
-        view.backgroundColor = Constants.Colors.backgroundColor
+    }
+    
+    private func prepareBackground() {
+        view.addSubview(gradient)
+        gradient.translatesAutoresizingMaskIntoConstraints = false
+        gradient.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        gradient.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        gradient.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        gradient.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
     }
     
     public func lockUI() {
