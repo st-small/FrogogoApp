@@ -8,9 +8,14 @@
 
 import UIKit
 
+public protocol UsersCollectionViewDelegate: class {
+    func didSelectItem(id: Int)
+}
+
 public class UsersCollectionView: UICollectionView {
     
     // Data
+    public var userDelegate: UsersCollectionViewDelegate?
     private var users = [User]()
     
     public init() {
@@ -57,7 +62,8 @@ extension UsersCollectionView: UICollectionViewDataSource {
 
 extension UsersCollectionView: UICollectionViewDelegate {
     public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
+        let user = users[indexPath.row]
+        userDelegate?.didSelectItem(id: user.id)
     }
 }
 

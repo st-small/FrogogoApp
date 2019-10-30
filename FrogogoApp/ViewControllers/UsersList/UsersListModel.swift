@@ -14,6 +14,7 @@ public protocol UsersListModelProtocol: class {
     var users: Dynamic<[User]> { get }
     
     func getUsers()
+    func filterUser(by id: Int) -> User?
 }
 
 public class UsersListModel: UsersListModelProtocol {
@@ -43,5 +44,9 @@ public class UsersListModel: UsersListModelProtocol {
             guard let users = response else { return }
             self?.users.value = users
         }
+    }
+    
+    public func filterUser(by id: Int) -> User? {
+        return users.value.filter({ $0.id == id }).first
     }
 }

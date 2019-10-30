@@ -86,4 +86,10 @@ public class FROViewController: UIViewController {
     }
     
     public func okButtonTapped() { }
+    
+    public func presentViaCrossDissolve(_ viewControllerToPresent: UIViewController, on controller: UIViewController) {
+        viewControllerToPresent.modalPresentationStyle = .overCurrentContext
+        viewControllerToPresent.modalTransitionStyle = .crossDissolve
+        controller.present(viewControllerToPresent, animated: true, completion: nil)
+    }
 }

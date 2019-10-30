@@ -25,6 +25,10 @@
 		8487FF2F2369EED900C50284 /* UsersCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8487FF2E2369EED900C50284 /* UsersCollectionView.swift */; };
 		8487FF312369F3C300C50284 /* UsersCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8487FF302369F3C300C50284 /* UsersCollectionViewCell.swift */; };
 		8487FF332369F3F600C50284 /* WebImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8487FF322369F3F600C50284 /* WebImageView.swift */; };
+		8487FF36236A0D7700C50284 /* UserModalAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8487FF35236A0D7700C50284 /* UserModalAssembly.swift */; };
+		8487FF38236A0D9000C50284 /* UserModalModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8487FF37236A0D9000C50284 /* UserModalModel.swift */; };
+		8487FF3A236A0D9B00C50284 /* UserModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8487FF39236A0D9B00C50284 /* UserModalView.swift */; };
+		8487FF3E236A20F200C50284 /* NSAttributedString + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8487FF3D236A20F200C50284 /* NSAttributedString + Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +52,10 @@
 		8487FF2E2369EED900C50284 /* UsersCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersCollectionView.swift; sourceTree = "<group>"; };
 		8487FF302369F3C300C50284 /* UsersCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersCollectionViewCell.swift; sourceTree = "<group>"; };
 		8487FF322369F3F600C50284 /* WebImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebImageView.swift; sourceTree = "<group>"; };
+		8487FF35236A0D7700C50284 /* UserModalAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModalAssembly.swift; sourceTree = "<group>"; };
+		8487FF37236A0D9000C50284 /* UserModalModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModalModel.swift; sourceTree = "<group>"; };
+		8487FF39236A0D9B00C50284 /* UserModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModalView.swift; sourceTree = "<group>"; };
+		8487FF3D236A20F200C50284 /* NSAttributedString + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSAttributedString + Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				84870EA2236996EB00425D1B /* UsersList */,
+				8487FF34236A0D5B00C50284 /* UserModal */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -126,6 +135,7 @@
 				84870EAB236998D300425D1B /* Constants.swift */,
 				84870EA92369989500425D1B /* FROViewController.swift */,
 				84870EAD2369997100425D1B /* UIColor + Extension.swift */,
+				8487FF3D236A20F200C50284 /* NSAttributedString + Extension.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -165,6 +175,16 @@
 				8487FF302369F3C300C50284 /* UsersCollectionViewCell.swift */,
 			);
 			path = UsersCollection;
+			sourceTree = "<group>";
+		};
+		8487FF34236A0D5B00C50284 /* UserModal */ = {
+			isa = PBXGroup;
+			children = (
+				8487FF35236A0D7700C50284 /* UserModalAssembly.swift */,
+				8487FF37236A0D9000C50284 /* UserModalModel.swift */,
+				8487FF39236A0D9B00C50284 /* UserModalView.swift */,
+			);
+			path = UserModal;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -237,8 +257,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8487FF38236A0D9000C50284 /* UserModalModel.swift in Sources */,
 				84870EB223699B0200425D1B /* NetworkService.swift in Sources */,
 				84870EB423699B7200425D1B /* APIConstants.swift in Sources */,
+				8487FF3E236A20F200C50284 /* NSAttributedString + Extension.swift in Sources */,
 				84870EA42369970D00425D1B /* UsersListAssembly.swift in Sources */,
 				84870EAE2369997100425D1B /* UIColor + Extension.swift in Sources */,
 				84870EA82369982D00425D1B /* Dynamic.swift in Sources */,
@@ -247,10 +269,12 @@
 				8487FF2F2369EED900C50284 /* UsersCollectionView.swift in Sources */,
 				8487FF312369F3C300C50284 /* UsersCollectionViewCell.swift in Sources */,
 				8487FF332369F3F600C50284 /* WebImageView.swift in Sources */,
+				8487FF36236A0D7700C50284 /* UserModalAssembly.swift in Sources */,
 				84870EAC236998D300425D1B /* Constants.swift in Sources */,
 				84870EB023699ABA00425D1B /* NetworkDataFetcher.swift in Sources */,
 				84870EAA2369989500425D1B /* FROViewController.swift in Sources */,
 				8487FF2C2369E35800C50284 /* GradientView.swift in Sources */,
+				8487FF3A236A0D9B00C50284 /* UserModalView.swift in Sources */,
 				84870EA1236994D800425D1B /* UsersListView.swift in Sources */,
 				84870EB723699C1200425D1B /* UserResponse.swift in Sources */,
 			);

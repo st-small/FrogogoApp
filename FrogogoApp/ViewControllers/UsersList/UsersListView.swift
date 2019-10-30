@@ -59,6 +59,7 @@ public class UsersListView: FROViewController {
     }
     
     private func prepareCollectionView() {
+        usersCollection.userDelegate = self
         view.addSubview(usersCollection)
         usersCollection.translatesAutoresizingMaskIntoConstraints = false
         usersCollection.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
@@ -83,6 +84,19 @@ public class UsersListView: FROViewController {
     }
     
     @objc private func addUser() {
+        showModal()
+    }
     
+    private func showModal(user: User? = nil) {
+        let assembly = UserModalAssembly(user)
+        let modal = assembly.view
+        presentViaCrossDissolve(modal, on: navigationController!)
+    }
+}
+
+extension UsersListView: UsersCollectionViewDelegate {
+    public func didSelectItem(id: Int) {
+        guard let user = viewModel?.filterUser(by: id) else { return }
+        showModal(user: user)
     }
 }
