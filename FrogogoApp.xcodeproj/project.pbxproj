@@ -29,6 +29,7 @@
 		8487FF38236A0D9000C50284 /* UserModalModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8487FF37236A0D9000C50284 /* UserModalModel.swift */; };
 		8487FF3A236A0D9B00C50284 /* UserModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8487FF39236A0D9B00C50284 /* UserModalView.swift */; };
 		8487FF3E236A20F200C50284 /* NSAttributedString + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8487FF3D236A20F200C50284 /* NSAttributedString + Extension.swift */; };
+		8487FF40236ADA1300C50284 /* UIView + Shake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8487FF3F236ADA1300C50284 /* UIView + Shake.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +57,7 @@
 		8487FF37236A0D9000C50284 /* UserModalModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModalModel.swift; sourceTree = "<group>"; };
 		8487FF39236A0D9B00C50284 /* UserModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModalView.swift; sourceTree = "<group>"; };
 		8487FF3D236A20F200C50284 /* NSAttributedString + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSAttributedString + Extension.swift"; sourceTree = "<group>"; };
+		8487FF3F236ADA1300C50284 /* UIView + Shake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Shake.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +138,7 @@
 				84870EA92369989500425D1B /* FROViewController.swift */,
 				84870EAD2369997100425D1B /* UIColor + Extension.swift */,
 				8487FF3D236A20F200C50284 /* NSAttributedString + Extension.swift */,
+				8487FF3F236ADA1300C50284 /* UIView + Shake.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -274,6 +277,7 @@
 				84870EB023699ABA00425D1B /* NetworkDataFetcher.swift in Sources */,
 				84870EAA2369989500425D1B /* FROViewController.swift in Sources */,
 				8487FF2C2369E35800C50284 /* GradientView.swift in Sources */,
+				8487FF40236ADA1300C50284 /* UIView + Shake.swift in Sources */,
 				8487FF3A236A0D9B00C50284 /* UserModalView.swift in Sources */,
 				84870EA1236994D800425D1B /* UsersListView.swift in Sources */,
 				84870EB723699C1200425D1B /* UserResponse.swift in Sources */,
