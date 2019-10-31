@@ -19,9 +19,13 @@ public class FROViewController: UIViewController {
         return view
     }()
     
+    // Data
+    public var needGradientBackground = true
+    
     public override func loadView() {
         super.loadView()
         
+        guard needGradientBackground == true else { return }
         prepareBackground()
     }
     
@@ -77,15 +81,26 @@ public class FROViewController: UIViewController {
     }
     
     public func showErrorAlert(_ message: String) {
-        let alertController = UIAlertController(title: "Ошибка", message: message, preferredStyle: .alert)
-        let alertAction = UIAlertAction(title : "Ok", style : .default, handler: { action in
-            self.okButtonTapped()
+        let alertController = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
+        let alertAction = UIAlertAction(title : "OK", style : .default, handler: { action in
+            self.okErrorButtonTapped()
         })
         alertController.addAction(alertAction)
         self.present(alertController, animated: true, completion: nil)
     }
     
-    public func okButtonTapped() { }
+    public func okErrorButtonTapped() { }
+    
+    public func showSuccessAlert(_ message: String) {
+        let alertController = UIAlertController(title: "Success", message: message, preferredStyle: .alert)
+        let alertAction = UIAlertAction(title : "OK", style : .default, handler: { action in
+            self.okSuccessButtonTapped()
+        })
+        alertController.addAction(alertAction)
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
+    public func okSuccessButtonTapped() { }
     
     public func presentViaCrossDissolve(_ viewControllerToPresent: UIViewController, on controller: UIViewController) {
         viewControllerToPresent.modalPresentationStyle = .overCurrentContext

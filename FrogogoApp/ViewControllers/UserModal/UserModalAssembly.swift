@@ -8,7 +8,11 @@
 
 import Foundation
 
+public typealias ActionTrigger = (() -> ())
+
 public class UserModalAssembly {
+    
+    public var handler: ActionTrigger?
     
     private var viewController: UserModalView?
     private var user: User?
@@ -27,6 +31,7 @@ public class UserModalAssembly {
     }
     
     private func configureModule(_ view: UserModalView) {
-        view.viewModel = UserModalModel(user)
+        let model = UserModalModel(user, handler: handler)
+        view.viewModel = model
     }
 }

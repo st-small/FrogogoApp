@@ -18,6 +18,12 @@ public class UsersListView: FROViewController {
         return button
     }()
     
+    private var refreshControl: UIRefreshControl = {
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(loadData), for: .valueChanged)
+        return refreshControl
+    }()
+    
     private var usersCollection = UsersCollectionView()
     
     // Data
@@ -41,8 +47,6 @@ public class UsersListView: FROViewController {
         }
     }
     
-    // Services
-    
     
     public override func loadView() {
         super.loadView()
@@ -51,6 +55,10 @@ public class UsersListView: FROViewController {
         prepareCollectionView()
         prepareAddButton()
         
+        loadData()
+    }
+    
+    @objc private func loadData() {
         viewModel?.getUsers()
     }
     
@@ -66,6 +74,8 @@ public class UsersListView: FROViewController {
         usersCollection.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
         usersCollection.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         usersCollection.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        
+        usersCollection.addSubview(refreshControl)
     }
     
     private func prepareAddButton() {
@@ -80,6 +90,7 @@ public class UsersListView: FROViewController {
     
     private func usersWereUpdated(users: [User]) {
         usersCollection.set(users: users)
+        refreshControl.endRefreshing()
         usersCollection.reloadData()
     }
     
@@ -89,6 +100,11 @@ public class UsersListView: FROViewController {
     
     private func showModal(user: User? = nil) {
         let assembly = UserModalAssembly(user)
+        assembly.handler = { [weak self] in
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
+                self?.loadData()
+            })
+        }
         let modal = assembly.view
         presentViaCrossDissolve(modal, on: navigationController!)
     }

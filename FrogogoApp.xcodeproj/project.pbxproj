@@ -133,8 +133,8 @@
 		84870E9F2369942D00425D1B /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				84870EA72369982D00425D1B /* Dynamic.swift */,
 				84870EAB236998D300425D1B /* Constants.swift */,
+				84870EA72369982D00425D1B /* Dynamic.swift */,
 				84870EA92369989500425D1B /* FROViewController.swift */,
 				84870EAD2369997100425D1B /* UIColor + Extension.swift */,
 				8487FF3D236A20F200C50284 /* NSAttributedString + Extension.swift */,

@@ -39,8 +39,13 @@ public class UsersListModel: UsersListModelProtocol {
     
     public func getUsers() {
         isUIBlocked.value = true
-        fetcher.getUsers { [weak self] (response) in
+        fetcher.getUsers { [weak self] (response, error) in
             self?.isUIBlocked.value = false
+            
+            if let error = error {
+                self?.error.value = error.localizedDescription
+            }
+            
             guard let users = response else { return }
             self?.users.value = users
         }

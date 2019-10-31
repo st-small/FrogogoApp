@@ -13,4 +13,6 @@ public struct APIConstants {
     static let host = "frogogo-test.herokuapp.com"
     
     static let usersList = "/users.json"
+    static let addUser = "/users.json"
+    static let updateUser = "/users/"
 }
